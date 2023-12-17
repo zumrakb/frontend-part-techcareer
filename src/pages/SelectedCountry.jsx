@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import { flags } from "../Flags";
+import { useParams } from "react-router-dom";
 
 const SelectedCountry = () => {
   const Navigate = useNavigate();
@@ -9,9 +10,10 @@ const SelectedCountry = () => {
   function goHome() {
     Navigate("/");
   }
+  const params = useParams();
 
   function goEditingCountry() {
-    Navigate("/blog/:id/edit");
+    Navigate(`/blog/${params.id}/edit`);
   }
 
   return (

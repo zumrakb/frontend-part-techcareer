@@ -4,14 +4,15 @@ import { flags } from "../Flags";
 
 const EditingCountry = () => {
   const Navigate = useNavigate();
+
   function editingSubmit() {
-    Navigate("/blog/:id");
+    Navigate(-1);
   }
   return (
     <div className="editingPage">
       <img className="countryFlag" src={flags[1].link} alt="flagofcountry" />
       <h1 className="editingPageTitle">EDIT THE INFORMATION</h1>
-      <form className="creationForm" action="">
+      <div className="creationForm">
         <input
           className="creationInput"
           type="text"
@@ -28,7 +29,7 @@ const EditingCountry = () => {
         <button onClick={editingSubmit} className="creationSubmit">
           Save
         </button>
-      </form>
+      </div>
     </div>
   );
 };

@@ -1,15 +1,14 @@
-import React, { useState } from "react";
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 import Creation from "./Creation";
 
 import { flags } from "../Flags";
 
-const CardComponent = () => {
+const CardComponent = (props) => {
   const Navigate = useNavigate();
 
   function goToBlog() {
-    Navigate("/blog/:id");
+    Navigate(`/blog/${props.index}`);
   }
 
   return (
